@@ -7,7 +7,8 @@ The Azure AD User Enumeration Tool is a Python script that allows you to enumera
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/NotSoSecure/AzUserEnum.git```
+   git clone https://github.com/NotSoSecure/AzUserEnum.git
+   ```
 
 2. Navigate to the project directory:
     ```
@@ -18,7 +19,23 @@ The Azure AD User Enumeration Tool is a Python script that allows you to enumera
 Before running the script, ensure that you have the following:
 
 - Valid AWS IAM user credentials with API Gateway access.
-- An API Gateway created in your AWS account.
+    - Go to the AWS Management Console.
+    - Open the IAM (Identity and Access Management) service.
+    - In the left navigation pane, click on "Users" to view the list of IAM users.
+    - Locate the IAM user for which you want to grant API Gateway access and click on its name to open the user's details.
+    - In the "Permissions" tab, click on the "Add permissions" button.
+    - Select "Attach existing policies directly" to associate an existing policy with the user.
+    - In the search box, type "AmazonAPIGatewayAdministrator" and select the policy from the list.
+    - click on the "Next: Review" button.
+    - Review the information and make sure it is correct. Then click on the "Add permissions" button to grant API Gateway access to the IAM user.
+
+- An API Gateway need to be created in your AWS account.
+   - Open the API Gateway service from the list of available services.
+   - Click on "Create API" to start creating a new API.
+   - Choose the type of API you want to create. You can select either REST or WebSocket API. For this example, let's choose REST API.
+   - Select the "New API" option and give your API a name.
+   - Choose the endpoint type for your API. You can choose either regional or edge-optimized. Regional endpoints are recommended for most use cases.
+   - Click on "Create API" to create your API.
 
 To configure your AWS credentials and CLI, run the following command and provide the necessary information:
 
@@ -31,7 +48,7 @@ aws configure
 
 2. Run the script:
    ```
-   python AzUserEnum.py -f users.txt -d victim.cloud
+   python AzUserEnum.py -f users.txt -d azurecloud.com
    ```
    The script will attempt to find valid email IDs for each name in Azure AD.
 
@@ -49,21 +66,23 @@ aws configure
    
    
    Verifying...
-   admin@victim.cloud False
-   support@victim.cloud False
-   Ethan@victim.cloud False
-   Olivia@victim.cloud False
-   Liam@victim.cloud False
-   Lucas@victim.cloud False
-   Harper@victim.cloud False
-   Caden@victim.cloud False
-   bob@victim.cloud True
-   Charlotte@victim.cloud False
-   Grayson@victim.cloud False
+   admin@azurecloud.com False
+   support@azurecloud.com False
+   Ethan@azurecloud.com False
+   Olivia@azurecloud.com False
+   Liam@azurecloud.com False
+   Lucas@azurecloud.com True
+   Harper@azurecloud.com False
+   Caden@azurecloud.com False
+   steave@azurecloud.com True
+   Charlotte@azurecloud.com False
+   Grayson@azurecloud.com True
    ---------------------------------------
    [+] List of vaild Emails
    ---------------------------------------
-   bob@victim.cloud
+   steave@azurecloud.com
+   Lucas@azurecloud.com
+   Grayson@azurecloud.com
    
    --- 3.62 seconds ---
    ```
