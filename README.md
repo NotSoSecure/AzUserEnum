@@ -30,43 +30,43 @@ aws configure
 1. Prepare a file named `users.txt` containing the names of users for enumeration, with each name on a new line.
 
 2. Run the script:
-```
-python AzUserEnum.py -f users.txt -d victim.cloud
-```
-The script will attempt to find valid email IDs for each name in Azure AD.
-```
-                   _    _                       ______
-     /\           | |  | |                     |  ____|
-    /  \     ____ | |  | |  ___    ___   _ __  | |__     _ __    _   _   _ __ ___
-   / /\ \   |_  / | |  | | / __|  / _ \ | '__| |  __|   | '_ \  | | | | | '_ ` _ \
-  / ____ \   / /  | |__| | \__ \ |  __/ | |    | |____  | | | | | |_| | | | | | | |
- /_/    \_\ /___|  \____/  |___/  \___| |_|    |______| |_| |_|  \__,_| |_| |_| |_|
- ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
- @trouble1_raunak
-
-
-
-Verifying...
-admin@victim.cloud False
-support@victim.cloud False
-Ethan@victim.cloud False
-Olivia@victim.cloud False
-Liam@victim.cloud False
-Lucas@victim.cloud False
-Harper@victim.cloud False
-Caden@victim.cloud False
-bob@victim.cloud True
-Charlotte@victim.cloud False
-Grayson@victim.cloud False
----------------------------------------
-[+] List of vaild Emails
----------------------------------------
-bob@victim.cloud
-
---- 3.62 seconds ---
-```
+   ```
+   python AzUserEnum.py -f users.txt -d victim.cloud
+   ```
+   The script will attempt to find valid email IDs for each name in Azure AD.
 
 3. The script will output the valid email IDs found for each name, or indicate if no valid email ID was found.
+   ```
+                      _    _                       ______
+        /\           | |  | |                     |  ____|
+       /  \     ____ | |  | |  ___    ___   _ __  | |__     _ __    _   _   _ __ ___
+      / /\ \   |_  / | |  | | / __|  / _ \ | '__| |  __|   | '_ \  | | | | | '_ ` _ \
+     / ____ \   / /  | |__| | \__ \ |  __/ | |    | |____  | | | | | |_| | | | | | | |
+    /_/    \_\ /___|  \____/  |___/  \___| |_|    |______| |_| |_|  \__,_| |_| |_| |_|
+    ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+    @trouble1_raunak
+   
+   
+   
+   Verifying...
+   admin@victim.cloud False
+   support@victim.cloud False
+   Ethan@victim.cloud False
+   Olivia@victim.cloud False
+   Liam@victim.cloud False
+   Lucas@victim.cloud False
+   Harper@victim.cloud False
+   Caden@victim.cloud False
+   bob@victim.cloud True
+   Charlotte@victim.cloud False
+   Grayson@victim.cloud False
+   ---------------------------------------
+   [+] List of vaild Emails
+   ---------------------------------------
+   bob@victim.cloud
+   
+   --- 3.62 seconds ---
+   ```
 
 ## Contributing
 
